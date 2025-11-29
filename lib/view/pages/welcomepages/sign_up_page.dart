@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:mda/view/pages/Home/home_page.dart';
 import 'package:mda/view/widgets/app_botton_with_icon.dart';
 
 import '../../../constant/colors.dart';
 import '../../widgets/app_botton.dart';
 import '../../widgets/app_textfield.dart';
+import '../Home/bottom_nav_bar_page.dart';
 
 class SignUpPage extends StatelessWidget {
   const SignUpPage({super.key});
@@ -13,7 +15,7 @@ class SignUpPage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 40, vertical: 40),
+          padding: EdgeInsets.only(left: 40,right: 40,top: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -42,14 +44,27 @@ class SignUpPage extends StatelessWidget {
               AppTextfield(
                 text: 'كلمة المرور',
               ),
+              Directionality(
+                textDirection: TextDirection.rtl,
+                child: Row (children: [
+
+                    Checkbox(value: false, onChanged: (value){}),
+                  Text('أوفق على شروط الخدمة وسياسة الخصوصية',style: TextStyle(color: Colors.grey,fontSize: 14),)
+                ],),
+              ),
               SizedBox(
                 height: 30,
               ),
-              AppBotton(
-                title: 'متابعة',
-                color: AppColors.primarycolorlightblue,
-                fontcolor: Colors.white,
-                width: MediaQuery.of(context).size.width - 200,
+              InkWell(
+                onTap: (){
+               Navigator.push(context, MaterialPageRoute(builder: (context)=>BottomNavBarPage()));
+                },
+                child: AppBotton(
+                  title: 'متابعة',
+                  color: AppColors.primarycolorlightblue,
+                  fontcolor: Colors.white,
+                  width: MediaQuery.of(context).size.width - 200,
+                ),
               ),
              SizedBox(height: 10,),
               Row(
@@ -107,7 +122,28 @@ class SignUpPage extends StatelessWidget {
                   children: [
                     Text(' لديك حساب؟'),
                         SizedBox(height: 5,),
-                    TextButton(onPressed: (){}, child: Text('تسجيل دخول'))
+                    TextButton(onPressed: (){}, child: Text('تسجيل دخول')),
+                    SizedBox(height: 15,),
+
+                  ],
+                ),
+
+              ),Spacer(),
+              Directionality(
+                textDirection: TextDirection.rtl,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('شروط الخدمة',style: TextStyle(
+                        decoration: TextDecoration.underline,
+                        color: Colors.grey,
+                        fontSize: 14
+                    ),),Text('و',style: TextStyle(color: Colors.grey),),
+                    Text('سياسية الخصوصية',style: TextStyle(
+                        decoration: TextDecoration.underline,
+                        color: Colors.grey,
+                        fontSize: 14
+                    ),),
                   ],
                 ),
               )

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mda/view/pages/welcomepages/forget_passwordpage.dart';
 
 import '../../../constant/colors.dart';
 import '../../widgets/app_botton.dart';
@@ -12,7 +13,7 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+          padding: EdgeInsets.only(top: 16,right: 40,left: 40),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -51,7 +52,9 @@ class LoginPage extends StatelessWidget {
                 width: MediaQuery.of(context).size.width - 200,
               ),
               TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>ForgetPasswordPage()));
+                  },
                   child: Text(
                     'هل نسيت كلمة السر؟',
                     style: TextStyle(fontSize: 14),
@@ -112,6 +115,25 @@ class LoginPage extends StatelessWidget {
                     Text(' ليس لديك حساب؟'),
                     SizedBox(height: 5,),
                     TextButton(onPressed: (){}, child: Text('أنشئ حساب'))
+                  ],
+                ),
+              ),
+              Spacer(),
+              Directionality(
+                textDirection: TextDirection.rtl,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('شروط الخدمة',style: TextStyle(
+                        decoration: TextDecoration.underline,
+                        color: Colors.grey,
+                        fontSize: 14
+                    ),),Text('و',style: TextStyle(color: Colors.grey),),
+                    Text('سياسية الخصوصية',style: TextStyle(
+                        decoration: TextDecoration.underline,
+                        color: Colors.grey,
+                        fontSize: 14
+                    ),),
                   ],
                 ),
               )

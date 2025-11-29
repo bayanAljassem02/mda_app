@@ -5,4 +5,5 @@ class AppColors{
   static Color primarycolordarkblue=Color(0xFF8A38F5);
   static Color Secondrycolorlightblue=Color(0xFF9FE8E2);
   static Color NeutralcolorDarkblue=Color(0xFF1B3954);
+  static Color Neutralcolorlightblue=Color(0xFF2E5077);
 }

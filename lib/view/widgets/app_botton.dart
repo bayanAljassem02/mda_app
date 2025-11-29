@@ -16,7 +16,7 @@ AppBotton({required this.title,required this.color,required this.fontcolor,requi
           color: color,
           borderRadius: BorderRadius.circular(30)
       ),
-      child: Center(child: Text(title,style: TextStyle(color: fontcolor,fontSize:17, ),)),
+      child: Center(child: Text(title,style: TextStyle(color: fontcolor,fontSize:17, fontFamily: 'Tajawal'),)),
     );
   }
 }
