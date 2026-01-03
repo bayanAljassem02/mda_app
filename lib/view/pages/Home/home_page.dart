@@ -1,40 +1,46 @@
+
+
 import 'package:flutter/material.dart';
-import 'package:mda/constant/colors.dart';
+
+import 'package:mda/view/pages/Home/previous_exam_questions%20_pages.dart';
 import 'package:mda/view/widgets/homecard.dart';
 
 import '../../../data/models/homecardmodel.dart';
 
 class HomePage extends StatelessWidget {
-  List<HomeCardModel> cards = [
-    HomeCardModel(
-      title: "أسئلة الدورات",
-      subtitle: "أسئلة مأخوذة من الدورات السابقة للتدريب والمراجعة",
 
-      onTap: () {},
-      image: 'assets/images/Course Questions.png'
-    ),
-    HomeCardModel(
-      title: "أسئلة متوقعة",
-      subtitle: "أهم الأسئلة التي يرجح ظهورها في الامتحان الوطني",
-  image: 'assets/images/Expected Questions.png',
-      onTap: () {},
-    ),
-    HomeCardModel(
-      title: "تواصل مع مختص",
-      subtitle: "وجه أسئلتك واحصل على إجابة من مختص",
-  image: 'assets/images/Contact a Specialist.png',
-      onTap: () {},
-    ),
-    HomeCardModel(
-      title: "جلسات تحضيرية",
-      subtitle: "حصص مراجعة مناسبة لمساعدتك على الاستعداد",
-  image: 'assets/images/Prep Sessions.png',
-      onTap: () {},
-    ),
-  ];
 
   @override
   Widget build(BuildContext context) {
+    List<HomeCardModel> cards = [
+      HomeCardModel(
+          title: "أسئلة الدورات",
+          subtitle: "أسئلة مأخوذة من الدورات السابقة للتدريب والمراجعة",
+
+          onTap: () {},
+          image: 'assets/images/Course Questions.png'
+      ),
+      HomeCardModel(
+        title: "أسئلة متوقعة",
+        subtitle: "أهم الأسئلة التي يرجح ظهورها في الامتحان الوطني",
+        image: 'assets/images/Expected Questions.png',
+        onTap: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context)=>PreviousExamQuestionsscreen()));
+        },
+      ),
+      HomeCardModel(
+        title: "تواصل مع مختص",
+        subtitle: "وجه أسئلتك واحصل على إجابة من مختص",
+        image: 'assets/images/Contact a Specialist.png',
+        onTap: () {},
+      ),
+      HomeCardModel(
+        title: "جلسات تحضيرية",
+        subtitle: "حصص مراجعة مناسبة لمساعدتك على الاستعداد",
+        image: 'assets/images/Prep Sessions.png',
+        onTap: () {},
+      ),
+    ];
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
